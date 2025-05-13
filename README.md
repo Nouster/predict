@@ -18,8 +18,6 @@ Les objectis de ce test : - Je vérifie que le modèle réagit correctement face
 
 _Ce test est important car il me garantit que le modèle ne retourne pas des résultats silencieusement incorrect._
 
-## Test pour l'API
-
 Les deux derniers tests sont là pour s'assurer que les champs neighbourhood_group et room_type dans la classe PredictionRequest acceptent uniquement les valeurs que j'ai définies dans l’enum, et lèvent une exception sinon.
 
 ## Pour lancer l'API
