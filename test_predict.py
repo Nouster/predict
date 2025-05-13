@@ -6,15 +6,14 @@ from pydantic import ValidationError
 from main import PredictionRequest, NeighbourhoodGroup, RoomType
 
 
-    # Fixture qui charge le modèle une seule fois pour tous les tests du module.
-    # Ça nous évite de recharger le modèle à chaque test.
-    # Le modèle est supposé avoir été sauvegardé dans un fichier 'model.pkl'.
+# Fixture qui charge le modèle une seule fois pour tous les tests du module.
+# Ça nous évite de recharger le modèle à chaque test.
+# Le modèle est supposé avoir été sauvegardé dans un fichier 'model.pkl'.
     
 @pytest.fixture(scope='module')
 def model():
     
     return pickle.load(open('model.pkl', 'rb'))
-
 
 
 # Fixture qui récupère les noms des caractéristiques attendus par mon modèle.
@@ -76,8 +75,8 @@ def test_special_characters_input(model, feature_names):
     with pytest.raises(ValueError):  # Vérifie si une erreur est levée pour les caractères invalides
         model.predict(input_df)
 
+
 def test_valid_enums():
-    # ✅ Cas valides
     req = PredictionRequest(
         latitude=40.7,
         longitude=-73.9,
@@ -91,6 +90,7 @@ def test_valid_enums():
     )
     assert req.neighbourhood_group == NeighbourhoodGroup.brooklyn
     assert req.room_type == RoomType.private_room
+
 
 def test_invalid_neighbourhood_group():
     with pytest.raises(ValidationError) as exc_info:

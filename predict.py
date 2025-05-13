@@ -31,15 +31,15 @@ input_data['reviews_per_month'] = float(input("Reviews per month : "))
 input_data['calculated_host_listings_count'] = int(input("Host listings count : "))
 input_data['availability_365'] = int(input("Availability (jours/an) : "))
 
-# Saisie pour neighbourhood_group (One-hot)
+# Saisie pour neighbourhood_group
 neighbourhood = input("Neighbourhood group (Brooklyn, Manhattan, Queens, Staten Island) : ").strip()
 neighbourhood_key = f'neighbourhood_group_{neighbourhood}'
 if neighbourhood_key in input_data:
     input_data[neighbourhood_key] = 1
 else:
-    print("❌ Valeur de neighbourhood non reconnue, aucune case cochée.")
+    print(" Valeur de neighbourhood pas reconnue.")
 
-# Saisie pour room_type (One-hot)
+# Saisie pour room_type
 room_type = input("Room type (Private room, Shared room, Entire home/apt) : ").strip()
 if room_type == "Private room":
     input_data['room_type_Private room'] = 1

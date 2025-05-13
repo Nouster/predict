@@ -6,7 +6,7 @@ Après avoir récupéré le dataset sur Kaggle, puis opérer certaines transform
 
 Le fichier predict.py me permet de prédire le prix d’une location Airbnb à New York en se basant sur plusieurs caractéristiques renseignées par l'utilisateur via la console.
 
-## Test unitaires
+## Tests unitaires
 
 Le premier test (test_valid_input()) a plusieurs objectifs : - vérifier que le modèle accepte les bonnes données. - vérifier que le type de retour est conforme (ici, un tableau numpy).
 
@@ -18,4 +18,6 @@ Les objectis de ce test : - Je vérifie que le modèle réagit correctement face
 
 _Ce test est important car il me garantit que le modèle ne retourne pas des résultats silencieusement incorrect._
 
-Les deux derniers tests sont là pour s'assurer que les champs neighbourhood_group et room_type dans ta classe PredictionRequest acceptent uniquement les valeurs que j'ai définies dans l’enum, et lèvent une exception sinon.
+## Test pour l'API
+
+Les deux derniers tests sont là pour s'assurer que les champs neighbourhood_group et room_type dans la classe PredictionRequest acceptent uniquement les valeurs que j'ai définies dans l’enum, et lèvent une exception sinon.
